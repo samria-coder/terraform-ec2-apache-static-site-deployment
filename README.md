@@ -51,5 +51,40 @@ What it does:
 
 Trigger used:
 
-```hcl
 html_hash = filesha1("${path.module}/index.html")
+This tells Terraform:
+
+If the HTML file changes, upload it again.
+
+3️⃣ Installing Apache (web server)
+
+Terraform runs remote commands to:
+
+Install Apache
+
+Start the Apache service
+
+Enable Apache on boot
+
+Create /var/www/html
+
+Move index.html to the Apache folder
+
+Apply correct permissions
+
+Your EC2 instance becomes a small web server.
+
+4️⃣ Website goes live
+
+After placing the HTML file in:
+
+/var/www/html/index.html
+
+Apache serves it automatically.
+
+Open your browser and visit:
+
+http://<your-ec2-public-ip>
+
+Your webpage loads instantly. 🎉
+
